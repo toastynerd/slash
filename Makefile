@@ -1,9 +1,10 @@
 SRC_DIR = src
+TEST_DIR = test
 LIB = -lncurses -ltinfo
 INC = -Iinclude
 PREFIX ?= /usr/bin
 
-.PHONY: slash clean install
+.PHONY: slash clean install test
 
 slash: 
 	$(MAKE) -C $(SRC_DIR)
@@ -12,6 +13,9 @@ slash:
 
 install:
 	cp bin/slash $(PREFIX)/slash
+
+test:
+	$(MAKE) -C $(TEST_DIR)
 
 clean:
 	$(MAKE) -C $(SRC_DIR) clean
