@@ -1,0 +1,14 @@
+LIB = -lncurses -ltinfo
+CFLAGS = -Wall
+INC = -I../include
+
+OBJ = main.c
+SRCS = $(OBJ:%.o=%.c)
+
+all: slash
+
+slash: $(SRCS) 
+	gcc -o $@ $(CLFAGS) $(LIB) $(INC) $(SRCS)
+
+clean: 
+	rm -rf *.o
