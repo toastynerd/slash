@@ -6,6 +6,8 @@
  */
 
 #include <ncurses.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "slash.h"
 #include "room.h"
@@ -42,6 +44,26 @@ int init_room(room *r, int itopx, int itopy, int ibotx, int iboty)
 	r->boty = iboty;
 
 	return 0;
+}
+
+room *create_room(int itopx, int itopy, int ibotx, int iboty)
+{
+	room *r = (room*)malloc(sizeof(room));
+	r->topx = (int *)malloc(sizeof(int));
+	r->topy = (int *)malloc(sizeof(int));
+	r->botx = (int *)malloc(sizeof(int));
+	r->boty = (int *)malloc(sizeof(int));
+
+	init_room(r, itopx, itopy, ibotx, iboty);
+	return r;
+}
+
+room_node *create_room_node(room *r)
+{
+	room_node *rn = (room_node *)malloc(sizeof(room_node));
+	rn->r = r;
+	rn->next = NULL;
+	return rn;
 }
 
 int room_delta_x(room *r)

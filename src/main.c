@@ -12,23 +12,23 @@
 #include "play.h"
 #include "room.h"
 #include "player.h"
+#include "level.h"
 
 int main(int argc, char **argv)
 {
-	room r;
-	room r2;
+	level level1;
+	init_level(&level1, 0);
 	player p;
-	if (init_room(&r, 1, 1, 15, 10) != 0)
-		return 1;
-	if (init_room(&r2, 5, 20, 15, 30) != 0)
-		return 1;
+	add_room(&level1, create_room(1, 1, 15, 15));
+	add_room(&level1, create_room(1, 20, 25, 30));
+	add_room(&level1, create_room(20, 1, 30, 25));
+	
 	init_player(&p, 3, 3);
 
 	init(argc, argv);
 
 	for(;;) {
-		draw_room(&r);
-		draw_room(&r2);
+		draw_level(&level1);
 		draw_player(&p);
 
 		process_player_input(&p);
