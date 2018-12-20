@@ -6,6 +6,8 @@
  */
 
 #include <ncurses.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "play.h"
 
@@ -23,6 +25,31 @@ int init(int argc, char **argv)
 int cleanup()
 {
 	endwin();
+	exit(0);
 
+}
+
+int process_player_input(player *p)
+{
+	char ch;
+	ch = getch();
+
+	switch(ch) {
+		case 'Q':
+			cleanup();
+			break;
+		case 'h':
+			move_player(p, DIREC_WEST);
+			break;
+		case 'j':
+			move_player(p, DIREC_SOUTH);
+			break;
+		case 'k':
+			move_player(p, DIREC_NORTH);
+			break;
+		case 'l':
+			move_player(p, DIREC_EAST);
+			break;
+	}
 	return 0;
 }
