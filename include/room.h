@@ -23,7 +23,14 @@ typedef struct {
 	int boty;
 } room;
 
+typedef struct {
+	room *r;
+	struct room_node *next;
+} room_node;
+
 int init_room(room *, int, int, int, int);
+room* create_room(int, int, int, int);
+room_node* create_room_node(room *);
 
 int room_delta_x(room *);
 int room_delta_y(room *);
