@@ -15,4 +15,10 @@ typedef struct {
 	int y;
 } player;
 
+int draw_player(player *);
+
+int init_player(player *, int, int);
+
+int move_player(player *, Directions);
+
 #endif
