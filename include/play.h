@@ -10,4 +10,7 @@
 #ifndef _PLAY_H_
 #define _PLAY_H_
 
+int init(int, char**);
+int cleanup();
+
 #endif
