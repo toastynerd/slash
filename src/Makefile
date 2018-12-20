@@ -2,7 +2,7 @@ LIB = -lncurses -ltinfo
 CFLAGS = -Wall
 INC = -I../include
 
-OBJ = main.c
+OBJ = main.c room.c
 SRCS = $(OBJ:%.o=%.c)
 
 all: slash
