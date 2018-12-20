@@ -2,7 +2,7 @@ LIB = -lncurses -ltinfo -lcunit
 CFLAGS = -Wall
 INC = -I../include
 
-OBJ = test.c
+OBJ = test.c test_helpers.c room_test.c ../src/room.c
 SRCS = $(OBJ:%.o=%.c)
 
 all: test run_test

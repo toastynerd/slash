@@ -10,9 +10,9 @@
 #include "slash.h"
 #include "room.h"
 
-int init_room(room *r, itopx, itopy, ibotx, iboty)
+int init_room(room *r, int itopx, int itopy, int ibotx, int iboty)
 {
-	if (ibotx < itopx || iboty < itopy)
+	if (ibotx <= itopx || iboty <= itopy)
 		return -1;
 	r->topx = itopx;
 	r->topy = itopy;
@@ -22,12 +22,17 @@ int init_room(room *r, itopx, itopy, ibotx, iboty)
 	return 0;
 }
 
-int delta_x(room *r)
+int room_delta_x(room *r)
 { 
 	return r->botx - r->topx;
 }
 
+int room_delta_y(room *r)
+{
+	return r->boty - r->topy;
+}
+
 int drawroom(room *r)
 {
-	int x, y;
+	return 0;
 }

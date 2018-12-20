@@ -23,8 +23,11 @@ typedef struct {
 	int boty;
 } room;
 
-int init_room(room *);
-int delta_x(room *);
+int init_room(room *, int, int, int, int);
+
+int room_delta_x(room *);
+int room_delta_y(room *);
+
 int gen_room(room *);
 int draw_room(room *);
 #endif
