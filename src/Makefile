@@ -8,7 +8,7 @@ SRCS = $(OBJ:%.o=%.c)
 all: slash
 
 slash: $(SRCS) 
-	gcc -o $@ $(CLFAGS) $(LIB) $(INC) $(SRCS)
+	gcc -o $@ $(CFLAGS) $(LIB) $(INC) $(SRCS)
 
 clean: 
 	rm -rf *.o

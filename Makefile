@@ -19,4 +19,5 @@ test:
 
 clean:
 	$(MAKE) -C $(SRC_DIR) clean
+	$(MAKE) -C $(TEST_DIR) clean
 	rm -rf bin/slash
